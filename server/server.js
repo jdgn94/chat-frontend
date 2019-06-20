@@ -54,4 +54,12 @@ io.on('connection', (socket) => {
       return callback(JSON.parse(body));
     });
   });
+
+  socket.on('token', (param) => {
+    Request.get(`${url}/conversations/`, param, (error, response, body) => {
+      if (error) return console.dir(error);
+      console.dir(JSON.parse(body));
+      return socket.emit('allChats', JSON.parse(body));
+    })
+  });
 });
