@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mis Chats</title>
-    <script type="text/javascript">
-      if (!localStorage.getItem('userToken')) {
-        window.location.href = "/";
-      }
-    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
   </head>
   <body>
-    <h3>Chats</h3>
-    <div id="all-chats">
-      
+    <div class="centered-form">
+      <div class="centered-form__form">
+        <button class="btn btn-primary" id="logout">Log Out</button>
+        <div class="form-field"><h3>Join Chat</h3></div>
+          <form action="/chats_room.html" method="GET">
+            <div class="form-field">
+              <label for="room">Room name</label>
+              <input type="text" id="room" name="room">
+            </div>
+            <div class="form-field">
+              <button type="submit">Join</button>
+            </div>
+          </form>
+        </div>
     </div>
-    <button id="btn-logout">Cerrar sesion</button>
   </body>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="js/chats.js"></script>
+  <script src="js/chat.js"></script>
 </html>
