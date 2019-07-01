@@ -1,4 +1,6 @@
-let socket = io('http://localhost:3000/');
+let socket = io('http://192.168.0.109:3000/', {
+    query: { token: localStorage.getItem('userToken') }
+});
 
 function scrollToBottom() {
     let messages = document.querySelector('#messages').lastElementChild;
@@ -11,6 +13,7 @@ function scrollToBottom() {
 
 socket.on('connect', function(){
     console.log('Connected to server. token:', localStorage.getItem('userToken'));
+    console.log(params);
 
    
     socket.emit('join', params, function(err){
