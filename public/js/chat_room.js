@@ -1,4 +1,4 @@
-let socket = io('http://192.168.0.109:3000/', {
+let socket = io('http://localhost:3000/', {
     query: { token: localStorage.getItem('userToken') }
 });
 
