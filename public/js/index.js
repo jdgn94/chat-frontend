@@ -1,6 +1,6 @@
 var login = document.getElementById('btn-login');
 var singin = document.getElementById('btn-singin');
-const url = 'http://192.168.0.114:3000/api';
+const url = 'http://192.168.0.110:3000/api';
 
 console.log(localStorage);
 
